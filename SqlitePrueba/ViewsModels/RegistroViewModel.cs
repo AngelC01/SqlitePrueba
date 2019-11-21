@@ -10,6 +10,7 @@ using GalaSoft.MvvmLight.Command;
 using SqlitePrueba.Models;
 using Plugin.Media;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace SqlitePrueba.ViewsModels
 {
@@ -115,8 +116,24 @@ namespace SqlitePrueba.ViewsModels
                 return;
             }
 
+            if(!Regex.IsMatch(this.Name, @"^[a-zA-Z]+$")|| !Regex.IsMatch(this.LastName, @"^[a-zA-Z]+$"))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                   "Los campos ingresados solo deben tener letras",
+                   "Aceptar");
+                return;
+            }
 
-            
+            if (this.ImagProfiledb == null)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                   "Debe seleccionar o tomar una foto ",
+                   "Aceptar");
+                return;
+            }
+
             UserRepository.Instancia.AddNewUser(this.Name, this.LastName, this.ImagProfiledb);
             BlanquearTxt();
         }
@@ -199,6 +216,7 @@ namespace SqlitePrueba.ViewsModels
             });
 
             Console.WriteLine("XDDD" + "");
+            
 
 
 
@@ -207,6 +225,7 @@ namespace SqlitePrueba.ViewsModels
         {
             this.Name = string.Empty;
             this.LastName = string.Empty;
+            this.ImagProfile = null;
         }
 
 
@@ -222,6 +241,8 @@ namespace SqlitePrueba.ViewsModels
             }
             return ImageBytes;
         }
+
+
 
         #endregion
     }
