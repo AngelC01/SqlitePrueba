@@ -11,6 +11,7 @@ using SqlitePrueba.Models;
 using Plugin.Media;
 using System.IO;
 using System.Text.RegularExpressions;
+using SqlitePrueba.CustomControls;
 
 namespace SqlitePrueba.ViewsModels
 {
@@ -59,8 +60,6 @@ namespace SqlitePrueba.ViewsModels
         } 
         #endregion
 
-
-
         #region Comandos
 
         public ICommand SeleccionarFotoCommand
@@ -94,7 +93,6 @@ namespace SqlitePrueba.ViewsModels
         }
 
         #endregion
-
 
         #region Metodos
         private async void Register()
@@ -135,6 +133,8 @@ namespace SqlitePrueba.ViewsModels
             }
 
             UserRepository.Instancia.AddNewUser(this.Name, this.LastName, this.ImagProfiledb);
+            DependencyService.Get<IMessage>().LongAlert("Usuario Registrado correctamente");
+            
             BlanquearTxt();
         }
 
@@ -215,21 +215,14 @@ namespace SqlitePrueba.ViewsModels
 
             });
 
-            Console.WriteLine("XDDD" + "");
-            
-
-
-
         }
+
         private void BlanquearTxt()
         {
             this.Name = string.Empty;
             this.LastName = string.Empty;
             this.ImagProfile = null;
         }
-
-
-
 
         private byte[] GetImageBytes(System.IO.Stream stream)
         {
@@ -241,8 +234,6 @@ namespace SqlitePrueba.ViewsModels
             }
             return ImageBytes;
         }
-
-
 
         #endregion
     }

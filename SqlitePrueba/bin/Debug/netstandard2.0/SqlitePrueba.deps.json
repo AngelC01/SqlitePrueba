@@ -14,7 +14,8 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xamarin.Essentials": "1.2.0",
           "Xamarin.Forms": "4.3.0.778476-pre1",
-          "sqlite-net-pcl": "1.6.292"
+          "sqlite-net-pcl": "1.6.292",
+          "Mono.Android": "0.0.0.0"
         },
         "runtime": {
           "SqlitePrueba.dll": {}
@@ -138,6 +139,14 @@
             "fileVersion": "4.3.0.183"
           }
         }
+      },
+      "Mono.Android/0.0.0.0": {
+        "runtime": {
+          "Mono.Android.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
       }
     }
   },
@@ -223,6 +232,11 @@
       "sha512": "sha512-z9LSqQV9Ox9dYzLJm2Q08Pn5datDnI/awpxksaJ/4wk2g26WerhXVwoTufm0yDfXk0SoEu4FQcCues7GbkGdbw==",
       "path": "xamarin.forms/4.3.0.778476-pre1",
       "hashPath": "xamarin.forms.4.3.0.778476-pre1.nupkg.sha512"
+    },
+    "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

@@ -41,3 +41,7 @@ D:\Proyectos Daniel\SqlitePrueba\SqlitePrueba\obj\Debug\netstandard2.0\SqlitePru
 D:\Proyectos Daniel\SqlitePrueba\SqlitePrueba\obj\Debug\netstandard2.0\ref\SqlitePrueba.dll
 D:\Proyectos Daniel\SqlitePrueba\SqlitePrueba\obj\Debug\netstandard2.0\SqlitePrueba.pdb
 C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba\obj\Debug\netstandard2.0\SqlitePrueba.csprojAssemblyReference.cache
+C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba\bin\Debug\netstandard2.0\Mono.Android.dll
+C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba\bin\Debug\netstandard2.0\Mono.Android.pdb
+C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba\bin\Debug\netstandard2.0\Mono.Android.xml
+C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba\obj\Debug\netstandard2.0\SqlitePrueba.csproj.CopyComplete
