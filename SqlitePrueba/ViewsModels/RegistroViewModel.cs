@@ -18,6 +18,7 @@ namespace SqlitePrueba.ViewsModels
     public class RegistroViewModel : BaseViewModel
     {
         #region Atributos
+        
         private Stream input;
         private String name;
         private String lastname;
@@ -61,6 +62,7 @@ namespace SqlitePrueba.ViewsModels
         #endregion
 
         #region Comandos
+       
 
         public ICommand SeleccionarFotoCommand
         {

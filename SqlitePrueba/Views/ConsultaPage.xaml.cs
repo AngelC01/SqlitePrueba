@@ -16,7 +16,7 @@ namespace SqlitePrueba.Views
         {
             InitializeComponent();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Red;
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.OrangeRed;
+           
         }
     }
 }

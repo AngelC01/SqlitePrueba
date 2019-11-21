@@ -1463,3 +1463,4 @@ D:\Proyectos Daniel\SqlitePrueba\SqlitePrueba.Android\obj\Debug\90\stamp\_Genera
 D:\Proyectos Daniel\SqlitePrueba\SqlitePrueba.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 D:\Proyectos Daniel\SqlitePrueba\SqlitePrueba.Android\obj\Debug\90\res\drawable\fondo.png
 C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba.Android\obj\Debug\90\res\drawable\fondo.png
+C:\Users\Next2\source\repos\SqlitePrueba\SqlitePrueba.Android\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp

@@ -18,12 +18,16 @@
             <ListView 
                 HasUnevenRows="True"
                 SeparatorVisibility="None"
+                SelectedItem="{Binding SelectedUser}"
                 ItemsSource="{Binding Users2Colleciton}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <CustomControls:ExtendedViewCell SelectedBackgroundColor="Fuchsia">
+                        <CustomControls:ExtendedViewCell 
+                         SelectedBackgroundColor="Fuchsia"
+                         >
                             <ViewCell.View>
                                 <Grid>
+                                    
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="4*" />
@@ -45,6 +49,7 @@
                                     </Image>
 
                                 </Grid>
+                                
                             </ViewCell.View>
                         </CustomControls:ExtendedViewCell>
                     </DataTemplate>
