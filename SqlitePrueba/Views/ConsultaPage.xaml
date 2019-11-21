@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:CustomControls="clr-namespace:SqlitePrueba.CustomControls"
+             mc:Ignorable="d"
+             x:Class="SqlitePrueba.Views.ConsultaPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundColor="#FF1D1930"
+           >
+    
+    <ContentPage.Content>
+        
+        <StackLayout
+            BindingContext="{Binding Consulta}">
+            <ListView 
+                HasUnevenRows="True"
+                SeparatorVisibility="None"
+                ItemsSource="{Binding Users2Colleciton}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <CustomControls:ExtendedViewCell SelectedBackgroundColor="Fuchsia">
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="4*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label 
+                                        Text="{Binding NombreCompleto}"
+                                        TextColor="White"
+                                        HorizontalTextAlignment="Start"
+                                        VerticalTextAlignment="Center"
+                                        Grid.Column="1"
+                                        FontSize="Medium"/>
+
+                                    <Image
+                                        WidthRequest="70"
+                                        HeightRequest="70"
+                                        Source="{Binding ImgProfile}"
+                                        Grid.Column="0"
+                                        >
+                                    </Image>
+
+                                </Grid>
+                            </ViewCell.View>
+                        </CustomControls:ExtendedViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
