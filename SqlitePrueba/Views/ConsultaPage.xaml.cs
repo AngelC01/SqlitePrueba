@@ -15,8 +15,11 @@ namespace SqlitePrueba.Views
         public ConsultaPage()
         {
             InitializeComponent();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Red;
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Aquamarine;
            
         }
+
+
+        
     }
 }

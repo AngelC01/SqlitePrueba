@@ -1,16 +1,18 @@
-﻿using SqlitePrueba.Models;
+﻿using GalaSoft.MvvmLight.Command;
+using SqlitePrueba.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace SqlitePrueba.ViewsModels
 {
    public class ConsultaViewModel:BaseViewModel
 
-    {
+   {
         #region Atributos
         private ObservableCollection<User> usersCollection;
         private ObservableCollection<User2> users2Collection;
@@ -18,30 +20,6 @@ namespace SqlitePrueba.ViewsModels
         private User2 selectedUser;
 
         #endregion
-
-        public User2 SelectedUser
-        {
-            get { return selectedUser; }
-            set
-            {
-                if (selectedUser != value)
-                {
-                    selectedUser = value;
-                    HandleSelectedItem();
-                }
-            }
-        }
-
-        private async void HandleSelectedItem()
-        {
-            await Application.Current.MainPage.DisplayAlert(
-                  "Usuario",
-                  SelectedUser.NombreCompleto +""+SelectedUser.Id,
-                  "Aceptar");
-            return;
-
-        }
-
 
         #region Propiedades
         public ImageSource ImageProf
@@ -56,7 +34,18 @@ namespace SqlitePrueba.ViewsModels
             get { return this.usersCollection; }
             set { SetValue(ref this.usersCollection, value); }
         }
-        
+        public User2 SelectedUser
+        {
+            get { return selectedUser; }
+            set
+            {
+                if (selectedUser != value)
+                {
+                    selectedUser = value;
+                    HandleSelectedItem();
+                }
+            }
+        }
         public ObservableCollection<User2> Users2Colleciton
         {
 
@@ -66,6 +55,15 @@ namespace SqlitePrueba.ViewsModels
         #endregion
 
         #region Metodos
+        private async void HandleSelectedItem()
+        {
+            await Application.Current.MainPage.DisplayAlert(
+                  "Usuario",
+                  SelectedUser.NombreCompleto + "" + SelectedUser.Id,
+                  "Aceptar");
+            return;
+
+        }
         public void LoadUsers()
         {
             var allUsers = UserRepository.Instancia.GetAllUsers();
@@ -85,12 +83,31 @@ namespace SqlitePrueba.ViewsModels
 
                 userItem.ImgProfile = ImageSource.FromStream(() => stream1);
 
-                Console.WriteLine("Hola XDD");
-                Console.WriteLine("Hola mundo");
+               
                 this.Users2Colleciton.Add(userItem);
 
             }
-        } 
+        }
+        #endregion
+
+        #region Comandos
+        public ICommand MenuCCommand
+        {
+            get
+            {
+                return new RelayCommand(MenuC);
+            }
+
+        }
+
+        private  void MenuC()
+        {
+           
+
+            Console.WriteLine("HOLAAAAAA XDDDD");
+            
+        }
+
         #endregion
 
         public ConsultaViewModel()

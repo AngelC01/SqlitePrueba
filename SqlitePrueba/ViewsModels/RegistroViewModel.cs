@@ -224,6 +224,7 @@ namespace SqlitePrueba.ViewsModels
             this.Name = string.Empty;
             this.LastName = string.Empty;
             this.ImagProfile = null;
+            this.ImagProfiledb = null;
         }
 
         private byte[] GetImageBytes(System.IO.Stream stream)

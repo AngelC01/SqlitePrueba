@@ -8,7 +8,7 @@
              mc:Ignorable="d"
              x:Class="SqlitePrueba.Views.ConsultaPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             BackgroundColor="#FF1D1930"
+             BackgroundColor="#FF1D1930" 
            >
     
     <ContentPage.Content>
@@ -17,35 +17,67 @@
             BindingContext="{Binding Consulta}">
             <ListView 
                 HasUnevenRows="True"
-                SeparatorVisibility="None"
+                SeparatorVisibility="Default"
+                SeparatorColor="LightGray"
                 SelectedItem="{Binding SelectedUser}"
-                ItemsSource="{Binding Users2Colleciton}">
+                ItemsSource="{Binding Users2Colleciton}"
+                VerticalScrollBarVisibility="Always">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <CustomControls:ExtendedViewCell 
-                         SelectedBackgroundColor="Fuchsia"
+                         SelectedBackgroundColor="WhiteSmoke"
                          >
-                            <ViewCell.View>
+                       
+                        <ViewCell.View>
                                 <Grid>
                                     
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="4*" />
+                                        <ColumnDefinition Width=".30*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label 
-                                        Text="{Binding NombreCompleto}"
-                                        TextColor="White"
-                                        HorizontalTextAlignment="Start"
-                                        VerticalTextAlignment="Center"
-                                        Grid.Column="1"
-                                        FontSize="Medium"/>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height=".5*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Label  Text="{Binding NombreCompleto}"
+                                            TextColor="White"
+                                            HorizontalTextAlignment="Start"
+                                            VerticalTextAlignment="Center"
+                                            FontSize="Medium"
+                                            FontAttributes="Bold"
+                                            Grid.Column="1"
+                                            Padding="10,0,10,0">
+                                    </Label>
+
+                                    <Frame
+                                           BorderColor="Black"
+                                           CornerRadius="60"
+                                           HeightRequest="40"
+                                           WidthRequest="40"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center">
+
+                                        <ImageButton
+                                           Source="{Binding ImgProfile}"
+                                           Aspect="AspectFill"
+                                           Margin="-20"          
+                                           Grid.Column="0">
+                                        </ImageButton>
+
+                                    </Frame>
 
                                     <Image
-                                        WidthRequest="70"
-                                        HeightRequest="70"
-                                        Source="{Binding ImgProfile}"
-                                        Grid.Column="0"
-                                        >
+                                            Source="menu"
+                                            HeightRequest="6"
+                                            WidthRequest="3"              
+                                            Grid.Column="2"
+                                            Aspect="AspectFill">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                  Command="{Binding MenuCCommand}"     
+                                                 />
+                                        </Image.GestureRecognizers>
                                     </Image>
 
                                 </Grid>
