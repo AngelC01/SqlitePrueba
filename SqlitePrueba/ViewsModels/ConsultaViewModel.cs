@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -70,6 +71,18 @@ namespace SqlitePrueba.ViewsModels
 
             this.UsersColleciton = new ObservableCollection<User>(allUsers);
             this.Users2Colleciton = new ObservableCollection<User2>();
+            this.UsersColleciton.Select(u => new User2
+            {
+                Name = u.Name,
+                LastName=u.LastName,
+                NombreCompleto=u.Name +" "+ u.LastName,
+                Id=u.Id,
+                Stream1= new MemoryStream(u.ImageProfile),
+                ImgProfile=ImageSource.FromStream(()=>Stream)
+
+
+
+             });;
             for (int i = 0; i < this.UsersColleciton.Count; i++)
             {
                 User2 userItem = new User2();
